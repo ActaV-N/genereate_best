@@ -25,7 +25,7 @@ def post_message( text, channel='#auto-trading', token=myToken):
 
 # 로그인
 upbit = pyupbit.Upbit(access, secret)
-print("autotrade start", flush=True, flush=True)
+print("autotrade start", flush=True)
 # 시작 메세지 슬랙 전송
 post_message("autotrade start")
 
