@@ -153,8 +153,8 @@ while True:
 
             print('Current ticker(only Volatility) : %s, k : %.1f' % (normal_ticker, normal_k), flush=True)
             post_message('Current ticker(only Volatility) : %s, k : %.1f' % (normal_ticker, normal_k))
-            print('Current ticker(only Volatility) : %s, k : %.1f' % (macd_ticker, macd_k), flush=True)
-            post_message('Current ticker(only Volatility) : %s, k : %.1f' % (macd_ticker, macd_k))
+            print('Current ticker(Volatility + MACD) : %s, k : %.1f' % (macd_ticker, macd_k), flush=True)
+            post_message('Current ticker(Volatility + MACD) : %s, k : %.1f' % (macd_ticker, macd_k))
             
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
