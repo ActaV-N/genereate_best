@@ -25,7 +25,7 @@ def post_message( text, channel='#auto-trading', token=myToken):
 
 # 로그인
 upbit = pyupbit.Upbit(access, secret)
-print("autotrade start")
+print("autotrade start", flush=True, flush=True)
 # 시작 메세지 슬랙 전송
 post_message("autotrade start")
 
@@ -151,9 +151,9 @@ while True:
             conn.commit()
             conn.close()
 
-            print('Current ticker(only Volatility) : %s, k : %.1f' % (normal_ticker, normal_k))
+            print('Current ticker(only Volatility) : %s, k : %.1f' % (normal_ticker, normal_k), flush=True)
             post_message('Current ticker(only Volatility) : %s, k : %.1f' % (normal_ticker, normal_k))
-            print('Current ticker(only Volatility) : %s, k : %.1f' % (macd_ticker, macd_k))
+            print('Current ticker(only Volatility) : %s, k : %.1f' % (macd_ticker, macd_k), flush=True)
             post_message('Current ticker(only Volatility) : %s, k : %.1f' % (macd_ticker, macd_k))
             
 
@@ -201,6 +201,6 @@ while True:
 
         time.sleep(1)
     except Exception as e:
-        print(e)
+        print(e, flush=True)
         post_message( e)
         time.sleep(1)
