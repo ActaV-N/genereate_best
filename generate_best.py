@@ -101,9 +101,9 @@ if row.fetchone() is None:
     conn.commit()
     conn.close()
 
-    print("Normal Ticker: %s, Normal K: %.1f, Normal HPR: %.2f" % (normal_ticker, normal_k, normal_hpr))
+    print("Normal Ticker: %s, Normal K: %.1f, Normal HPR: %.2f" % (normal_ticker, normal_k, normal_hpr), flush=True)
     post_message("Normal Ticker: %s, Normal K: %.1f, Normal HPR: %.2f" % (normal_ticker, normal_k, normal_hpr))
-    print("MACD Ticker: %s, MACD K: %.1f, MACD HPR: %.2f" % (macd_ticker, macd_k, macd_hpr))
+    print("MACD Ticker: %s, MACD K: %.1f, MACD HPR: %.2f" % (macd_ticker, macd_k, macd_hpr), flush=True)
     post_message("MACD Ticker: %s, MACD K: %.1f, MACD HPR: %.2f" % (macd_ticker, macd_k, macd_hpr))
 
 
@@ -133,9 +133,9 @@ while True:
 
             conn.commit()
             conn.close()
-            print("Normal Ticker: %s, Normal K: %.1f, Normal HPR: %.2f" % (normal_ticker, normal_k, normal_hpr))
+            print("Normal Ticker: %s, Normal K: %.1f, Normal HPR: %.2f" % (normal_ticker, normal_k, normal_hpr), flush=True)
             post_message("Normal Ticker: %s, Normal K: %.1f, Normal HPR: %.2f" % (normal_ticker, normal_k, normal_hpr))
-            print("MACD Ticker: %s, MACD K: %.1f, MACD HPR: %.2f" % (macd_ticker, macd_k, macd_hpr))
+            print("MACD Ticker: %s, MACD K: %.1f, MACD HPR: %.2f" % (macd_ticker, macd_k, macd_hpr), flush=True)
             post_message("MACD Ticker: %s, MACD K: %.1f, MACD HPR: %.2f" % (macd_ticker, macd_k, macd_hpr))
             
             load_flag = True
@@ -145,5 +145,5 @@ while True:
 
         time.sleep(1)
     except Exception as e:
-        print(e)
+        print(e, flush=True)
         time.sleep(1)
