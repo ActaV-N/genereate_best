@@ -75,6 +75,8 @@ def get_best(strategy):
     sorted_hpr = sorted(hprs, key=lambda x:x[1], reverse=True)
     return sorted_hpr[0]
 
+print('Get best Started', flush=True)
+
 conn = sqlite3.connect('./best_ticker_20.db')
 cur = conn.cursor()
 
