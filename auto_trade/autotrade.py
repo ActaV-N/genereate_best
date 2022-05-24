@@ -186,7 +186,8 @@ while True:
             
             normal_market_condition = get_current_price(normal_ticker) * normal_coin
             macd_market_condition = get_current_price(macd_ticker) * macd_coin
-
+            
+            sell_result = None
             if normal_market_condition > 5000:
                 sell_result = upbit.sell_market_order(normal_ticker, normal_coin * 0.9995)
                 post_message(normal_ticker + ' sell : ' + str(sell_result))
@@ -197,7 +198,9 @@ while True:
                 post_message(macd_ticker + ' sell : ' + str(sell_result))
                 macd_flag = False
 
-            fetch_flag = False
+            
+            if sell_result is not None:
+                fetch_flag = False
 
         time.sleep(1)
     except Exception as e:
